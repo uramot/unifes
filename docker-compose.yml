@@ -6,11 +6,11 @@ services:
     container_name: unifes_mongo
     volumes:
       - ./data/mongo:/data/db
-  web:
+  dev:
     build: .
-    container_name: unifes_web
+    container_name: unifes_dev
     volumes:
-      - .:/root/unifes
+      - .:/workspace/unifes
     depends_on:
       - mongo
     ports:
@@ -18,4 +18,4 @@ services:
     environment:
       DEBUG: unifes
     tty: true
-    command: 'npm start'
+    command: 'node-dev ./bin/www'

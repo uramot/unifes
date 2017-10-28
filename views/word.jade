@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 表示
+  ul.words
+    for word in words
+      li #{word.context}
+
+
+  script(src='/javascripts/word.js')
